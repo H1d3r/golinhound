@@ -13,7 +13,7 @@ Outputs [OpenGraph](https://bloodhound.specterops.io/opengraph/schema) JSON and 
   - [Linux](#linux)
   - [Azure / Entra](#azure--entra)
   - [Active Directory](#active-directory)
-- [Cypher Queries](#queries)
+- [Cypher Queries](#cypher-queries)
   - [Local Privilege Escalation](#local-privilege-escalation)
   - [Pivot from Dev to Prod](#pivot-from-dev-to-prod)
   - [Azure Tenant Breakout](#azure-tenant-breakout)
@@ -419,3 +419,4 @@ I would like to thank the following people for their support on this project:
 - **Hendrik Schmidt** ([@hendrkss](https://github.com/hendrkss)) for valuable discussions and working out the Velociraptor deployment strategy
 
 - **Hilko Bengen** ([@hillu](https://github.com/hillu)) for general guidance and support
+

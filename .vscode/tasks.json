@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "go build linux/amd64",
+        "type": "shell",
+        "command": "make build-linux-amd64",
+        "group": "build"
+      },
+      {
+        "label": "go build linux/arm64",
+        "type": "shell",
+        "command": "make build-linux-arm64",
+        "group": "build"
+      },
+      {
+        "label": "go build all",
+        "dependsOn": [
+          "go build linux/amd64",
+          "go build linux/arm64"
+        ],
+        "dependsOrder": "parallel",
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+}

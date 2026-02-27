@@ -1,0 +1,126 @@
+{
+    "metadata": {},
+    "graph": {
+        "nodes": [
+            {
+                "kinds": [
+                    "SSHKeyPair"
+                ],
+                "id": "e1nQ8+jn3n6HtGnGN1tJk4VCNlCMlJUAVtL9tw66MjQ",
+                "properties": {
+                    "Algorithm": "ssh-rsa",
+                    "Base64": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDC6EhQmbkDtgQXMWzdfldyLfPsy2V+OixwcIZz4wErRZdPCfyJsBaFsSCOUuPit15m41uDtzn6H8XnWYZzg/hY67QJO1u4xXKiWksn3te01lraMWxJNXvUoERM66TxTsbpWCjidtlY1QplxOzrQabBCZ9T9OvNd41GDeekjJM7j9fOcT0kyWU9Z/HbiTyr5fdl19SCNNj/vIyiRgNmJI0tAJtzIRyMAN6Nnga+ClPxExm60ntHQUgon3dIbwGoD4HHQean4DkohcUtIjFBrasdfHfjj/L8FZNpHb0dgrfnf2gLKYpgcuwlR25zDiZYAtFiN9yzy6Lztut0MNl2nK4shMegwjs771T6mCM1cmgizflGAs5qp1+gVd8oKwK2Wk4xWbM4Xhn56vcm9+GuYz010nKOuLAQ4qSazjIVe/JZWQAVcgt2CcXeX+LuBaNT9tdK9PQzDE80N/PDeITED+w4hCEOvdvrmuAVlLJlMjeXLthBehteYoWvv+X0B1AGYuc=",
+                    "FIDO2": false,
+                    "FingerprintMD5": "76:32:10:4e:81:5d:f5:96:f3:1b:01:d9:8c:6f:98:03",
+                    "FingerprintSHA256": "e1nQ8+jn3n6HtGnGN1tJk4VCNlCMlJUAVtL9tw66MjQ",
+                    "name": "e1nQ8+jn3n6HtGnGN1tJk4VCNlCMlJUAVtL9tw66MjQ",
+                    "objectid": "e1nQ8+jn3n6HtGnGN1tJk4VCNlCMlJUAVtL9tw66MjQ"
+                }
+            },
+            {
+                "kinds": [
+                    "SSHComputer"
+                ],
+                "id": "LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg",
+                "properties": {
+                    "FQDN": "srv1",
+                    "name": "srv1",
+                    "objectid": "LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                }
+            },
+            {
+                "kinds": [
+                    "SSHUser"
+                ],
+                "id": "ansible@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg",
+                "properties": {
+                    "name": "ansible@srv1",
+                    "objectid": "ansible@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                }
+            },
+            {
+                "kinds": [
+                    "SSHUser"
+                ],
+                "id": "alice@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg",
+                "properties": {
+                    "name": "alice@srv1",
+                    "objectid": "alice@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                }
+            }
+        ],
+        "edges": [
+            {
+                "kind": "HasPrivateKey",
+                "start": {
+                    "match_by": "id",
+                    "value": "alice@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                },
+                "end": {
+                    "match_by": "id",
+                    "value": "e1nQ8+jn3n6HtGnGN1tJk4VCNlCMlJUAVtL9tw66MjQ"
+                },
+                "properties": {
+                    "Cipher": "none",
+                    "Comment": "",
+                    "Encrypted": false,
+                    "FilePath": "/var/lib/alice/.ssh/id_rsa",
+                    "KDF": "none",
+                    "KeyFormat": "PEM"
+                }
+            },
+            {
+                "kind": "CanSSH",
+                "start": {
+                    "match_by": "id",
+                    "value": "e1nQ8+jn3n6HtGnGN1tJk4VCNlCMlJUAVtL9tw66MjQ"
+                },
+                "end": {
+                    "match_by": "id",
+                    "value": "ansible@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                },
+                "properties": {
+                    "Comment": "ansible-master@zodadminprod",
+                    "FilePath": "/home/ansible/.ssh/authorized_keys"
+                }
+            },
+            {
+                "kind": "CanImpersonate",
+                "start": {
+                    "match_by": "id",
+                    "value": "LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                },
+                "end": {
+                    "match_by": "id",
+                    "value": "alice@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                }
+            },
+            {
+                "kind": "CanImpersonate",
+                "start": {
+                    "match_by": "id",
+                    "value": "LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                },
+                "end": {
+                    "match_by": "id",
+                    "value": "ansible@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                }
+            },
+            {
+                "kind": "CanSudo",
+                "start": {
+                    "match_by": "id",
+                    "value": "ansible@LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                },
+                "end": {
+                    "match_by": "id",
+                    "value": "LstXqdHyWjT6+m7J3ECyJNPU+9amsook6I8so6L9+Lg"
+                },
+                "properties": {
+                    "Commands": "(ALL) NOPASSWD: ALL",
+                    "PasswordRequired": false
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "GolinHound",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "remote.autoForwardPorts": false
+      }
+    }
+  },
+  "remoteUser": "root",
+  "postStartCommand": "sudo service ssh start && sudo su - alice -c 'eval \"$(ssh-agent -s)\" && ssh-add .ssh/id_ed25519_RFC4716_nopasswd && screen -dmS ssh ssh -o StrictHostKeyChecking=no -A alice@localhost' && bash",
+  "forwardPorts": []
+}

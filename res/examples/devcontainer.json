@@ -9,8 +9,7 @@
                 "id": "zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI",
                 "properties": {
                     "FQDN": "52170a57403b",
-                    "name": "52170a57403b",
-                    "objectid": "zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI"
+                    "name": "52170a57403b"
                 }
             },
             {
@@ -19,8 +18,7 @@
                 ],
                 "id": "root@zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI",
                 "properties": {
-                    "name": "root@52170a57403b",
-                    "objectid": "root@zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI"
+                    "name": "root@52170a57403b"
                 }
             },
             {
@@ -29,8 +27,7 @@
                 ],
                 "id": "alice_adm@zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI",
                 "properties": {
-                    "name": "alice_adm@52170a57403b",
-                    "objectid": "alice_adm@zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI"
+                    "name": "alice_adm@52170a57403b"
                 }
             },
             {
@@ -39,8 +36,7 @@
                 ],
                 "id": "alice@zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI",
                 "properties": {
-                    "name": "alice@52170a57403b",
-                    "objectid": "alice@zOVfBOOalGjjMJoAegbquCaA07xDDqG0JsViiM+oQtI"
+                    "name": "alice@52170a57403b"
                 }
             },
             {
@@ -54,8 +50,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "60:93:eb:35:50:a5:9c:61:d2:39:41:79:85:95:d8:96",
                     "FingerprintSHA256": "TqhtVAmgVIQgCRZJVlULjX+slIm/3RiizmmMLCOAomQ",
-                    "name": "TqhtVAmgVIQgCRZJVlULjX+slIm/3RiizmmMLCOAomQ",
-                    "objectid": "TqhtVAmgVIQgCRZJVlULjX+slIm/3RiizmmMLCOAomQ"
+                    "name": "TqhtVAmgVIQgCRZJVlULjX+slIm/3RiizmmMLCOAomQ"
                 }
             },
             {
@@ -69,8 +64,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "a1:f6:ac:7a:55:26:ac:2c:08:cc:24:27:d4:6a:b5:37",
                     "FingerprintSHA256": "f7UsDI4jgPLl+6ciaRr8HOK4ldg/ACRdrQIhzxVl5WU",
-                    "name": "f7UsDI4jgPLl+6ciaRr8HOK4ldg/ACRdrQIhzxVl5WU",
-                    "objectid": "f7UsDI4jgPLl+6ciaRr8HOK4ldg/ACRdrQIhzxVl5WU"
+                    "name": "f7UsDI4jgPLl+6ciaRr8HOK4ldg/ACRdrQIhzxVl5WU"
                 }
             },
             {
@@ -84,8 +78,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "47:07:de:ff:93:d2:d8:40:8d:32:08:e3:da:7e:f5:cb",
                     "FingerprintSHA256": "ypIWoZK2PDvsKanWOlIZMXChbSkHYBzN98TodBwm+A0",
-                    "name": "ypIWoZK2PDvsKanWOlIZMXChbSkHYBzN98TodBwm+A0",
-                    "objectid": "ypIWoZK2PDvsKanWOlIZMXChbSkHYBzN98TodBwm+A0"
+                    "name": "ypIWoZK2PDvsKanWOlIZMXChbSkHYBzN98TodBwm+A0"
                 }
             },
             {
@@ -99,8 +92,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "78:44:00:5d:f3:53:cb:b6:ab:f5:86:64:2f:34:ce:c3",
                     "FingerprintSHA256": "wS2og3hMtPIPKD8bOG35BTSrUgw2aaaOstyMqYn7Umo",
-                    "name": "wS2og3hMtPIPKD8bOG35BTSrUgw2aaaOstyMqYn7Umo",
-                    "objectid": "wS2og3hMtPIPKD8bOG35BTSrUgw2aaaOstyMqYn7Umo"
+                    "name": "wS2og3hMtPIPKD8bOG35BTSrUgw2aaaOstyMqYn7Umo"
                 }
             },
             {
@@ -114,8 +106,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "bb:00:d5:64:24:76:fe:f5:fb:96:0e:a7:bf:76:d3:47",
                     "FingerprintSHA256": "yBnWyfkx/j8aFJjru83+i7zUwhBd1FPGEuKlWk3qhzI",
-                    "name": "yBnWyfkx/j8aFJjru83+i7zUwhBd1FPGEuKlWk3qhzI",
-                    "objectid": "yBnWyfkx/j8aFJjru83+i7zUwhBd1FPGEuKlWk3qhzI"
+                    "name": "yBnWyfkx/j8aFJjru83+i7zUwhBd1FPGEuKlWk3qhzI"
                 }
             },
             {
@@ -129,8 +120,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "2a:ac:9b:73:23:43:6d:5f:ad:f5:34:47:cf:3d:8a:af",
                     "FingerprintSHA256": "86Git1XezX4kx65YE+lhqJtUBTrXsgV1IZYi3tva5g4",
-                    "name": "86Git1XezX4kx65YE+lhqJtUBTrXsgV1IZYi3tva5g4",
-                    "objectid": "86Git1XezX4kx65YE+lhqJtUBTrXsgV1IZYi3tva5g4"
+                    "name": "86Git1XezX4kx65YE+lhqJtUBTrXsgV1IZYi3tva5g4"
                 }
             }
         ],

@@ -35,8 +35,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "ed:c2:58:24:02:17:c7:bc:91:9d:2f:3f:3b:81:64:39",
                     "FingerprintSHA256": "+YLZF6nBD+OalpWlz56nVyc8IL9Xjwofj42bccvsDEA",
-                    "name": "+YLZF6nBD+OalpWlz56nVyc8IL9Xjwofj42bccvsDEA",
-                    "objectid": "+YLZF6nBD+OalpWlz56nVyc8IL9Xjwofj42bccvsDEA"
+                    "name": "+YLZF6nBD+OalpWlz56nVyc8IL9Xjwofj42bccvsDEA"
                 }
             },
             {
@@ -46,8 +45,7 @@
                 "id": "NtbN5zwn1WYCYO3yJL5aaiq/vXwdX3ow9PV+ggZWSjg",
                 "properties": {
                     "FQDN": "srv7",
-                    "name": "srv7",
-                    "objectid": "NtbN5zwn1WYCYO3yJL5aaiq/vXwdX3ow9PV+ggZWSjg"
+                    "name": "srv7"
                 }
             },
             {
@@ -56,8 +54,7 @@
                 ],
                 "id": "ansible@NtbN5zwn1WYCYO3yJL5aaiq/vXwdX3ow9PV+ggZWSjg",
                 "properties": {
-                    "name": "ansible@srv7",
-                    "objectid": "ansible@NtbN5zwn1WYCYO3yJL5aaiq/vXwdX3ow9PV+ggZWSjg"
+                    "name": "ansible@srv7"
                 }
             },
             {
@@ -67,8 +64,7 @@
                 "id": "e7khdDjZrauN4SyCs6QJUuZD9qV5GuhvZP9FQqYU+CU",
                 "properties": {
                     "FQDN": "srv06",
-                    "name": "srv06",
-                    "objectid": "e7khdDjZrauN4SyCs6QJUuZD9qV5GuhvZP9FQqYU+CU"
+                    "name": "srv06"
                 }
             },
             {
@@ -77,8 +73,7 @@
                 ],
                 "id": "app@e7khdDjZrauN4SyCs6QJUuZD9qV5GuhvZP9FQqYU+CU",
                 "properties": {
-                    "name": "app@srv06",
-                    "objectid": "app@e7khdDjZrauN4SyCs6QJUuZD9qV5GuhvZP9FQqYU+CU"
+                    "name": "app@srv06"
                 }
             }
         ],

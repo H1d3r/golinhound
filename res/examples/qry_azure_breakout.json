@@ -9,8 +9,7 @@
                 "id": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
                 "properties": {
                     "FQDN": "srv5",
-                    "name": "srv5",
-                    "objectid": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
+                    "name": "srv5"
                 }
             },
             {
@@ -19,8 +18,7 @@
                 ],
                 "id": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
                 "properties": {
-                    "name": "appadmin@srv5",
-                    "objectid": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
+                    "name": "appadmin@srv5"
                 }
             },
             {
@@ -34,8 +32,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "36:09:69:9f:2e:46:e4:f9:2e:b1:fc:52:0e:73:b2:fb",
                     "FingerprintSHA256": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
-                    "name": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
-                    "objectid": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
+                    "name": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
                 }
             },
             {
@@ -46,7 +43,6 @@
                 "id": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5",
                 "properties": {
                     "name": "srv5",
-                    "objectid": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5",
                     "operatingsystem": "LINUX",
                     "tenantid": "0F2A5F68-F78A-4816-9F5B-37AFDDF87EE8"
                 }
@@ -58,8 +54,7 @@
                 "id": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
                 "properties": {
                     "FQDN": "srv6",
-                    "name": "srv6",
-                    "objectid": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
+                    "name": "srv6"
                 }
             },
             {
@@ -68,8 +63,7 @@
                 ],
                 "id": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
                 "properties": {
-                    "name": "appadmin@srv6",
-                    "objectid": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
+                    "name": "appadmin@srv6"
                 }
             },
             {
@@ -80,7 +74,6 @@
                 "id": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6",
                 "properties": {
                     "name": "srv6",
-                    "objectid": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6",
                     "operatingsystem": "LINUX",
                     "tenantid": "34E24DB7-CBA5-4C00-A1CB-8DA47459DDA9"
                 }

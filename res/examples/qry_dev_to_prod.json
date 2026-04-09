@@ -9,8 +9,7 @@
                 "id": "zfVhtOQPoXYkKWVBLQUROHEXXPkI9l94Yvp4hX88C4M",
                 "properties": {
                     "FQDN": "server-prod",
-                    "name": "server-prod",
-                    "objectid": "zfVhtOQPoXYkKWVBLQUROHEXXPkI9l94Yvp4hX88C4M"
+                    "name": "server-prod"
                 }
             },
             {
@@ -19,8 +18,7 @@
                 ],
                 "id": "eve@zfVhtOQPoXYkKWVBLQUROHEXXPkI9l94Yvp4hX88C4M",
                 "properties": {
-                    "name": "eve@server-prod",
-                    "objectid": "eve@zfVhtOQPoXYkKWVBLQUROHEXXPkI9l94Yvp4hX88C4M"
+                    "name": "eve@server-prod"
                 }
             },
             {
@@ -34,8 +32,7 @@
                     "FIDO2": false,
                     "FingerprintMD5": "0f:06:8b:4f:81:ef:69:91:f5:e9:4f:22:61:be:e1:c7",
                     "FingerprintSHA256": "8iwWkQeTkzwiPVXTrjhJPp5Z5sg4+LB5gJMEPyPpE80",
-                    "name": "8iwWkQeTkzwiPVXTrjhJPp5Z5sg4+LB5gJMEPyPpE80",
-                    "objectid": "8iwWkQeTkzwiPVXTrjhJPp5Z5sg4+LB5gJMEPyPpE80"
+                    "name": "8iwWkQeTkzwiPVXTrjhJPp5Z5sg4+LB5gJMEPyPpE80"
                 }
             },
             {
@@ -45,8 +42,7 @@
                 "id": "q6KCcbVsv18U1VxQtwL+sHmf+ruJ409uZ6K7+aSlhX0",
                 "properties": {
                     "FQDN": "server-test",
-                    "name": "server-test",
-                    "objectid": "q6KCcbVsv18U1VxQtwL+sHmf+ruJ409uZ6K7+aSlhX0"
+                    "name": "server-test"
                 }
             },
             {
@@ -55,8 +51,7 @@
                 ],
                 "id": "eve@q6KCcbVsv18U1VxQtwL+sHmf+ruJ409uZ6K7+aSlhX0",
                 "properties": {
-                    "name": "eve@server-test",
-                    "objectid": "eve@q6KCcbVsv18U1VxQtwL+sHmf+ruJ409uZ6K7+aSlhX0"
+                    "name": "eve@server-test"
                 }
             }
         ],

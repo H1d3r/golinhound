@@ -70,7 +70,6 @@ func openGraphBaseGraph(obj LinhoundObject) ([]*openGraphNode, []*openGraphEdge)
 
 	// flatten computer struct, add required fields, remove unnecessary fields
 	props, _ := structToMap(obj.GetComputer())
-	props["objectid"] = computerId
 	props["name"] = computerName
 	delete(props, "RootName")
 	delete(props, "UniqueId")
@@ -86,8 +85,7 @@ func openGraphBaseGraph(obj LinhoundObject) ([]*openGraphNode, []*openGraphEdge)
 		Kinds: []string{"SSHUser"},
 		ID:    rootId,
 		Properties: map[string]interface{}{
-			"name":     rootName,
-			"objectid": rootId,
+			"name": rootName,
 		},
 	})
 	edges = append(edges, newOpenGraphEdge(
@@ -108,8 +106,7 @@ func openGraphBaseGraph(obj LinhoundObject) ([]*openGraphNode, []*openGraphEdge)
 		Kinds: []string{"SSHUser"},
 		ID:    userId,
 		Properties: map[string]interface{}{
-			"name":     userName,
-			"objectid": userId,
+			"name": userName,
 		},
 	})
 	edges = append(edges, newOpenGraphEdge(
@@ -130,7 +127,6 @@ func openGraphKeypair(key LinhoundKey) *openGraphNode {
 
 	// flatten struct, add required fields, remove unnecessary fields
 	props, _ := structToMap(key.GetPublicKey())
-	props["objectid"] = uniqueId
 	props["name"] = displayName
 	delete(props, "Comment")
 
@@ -319,7 +315,6 @@ func AZVMToOpenGraph(obj AZVM) ([]*openGraphNode, []*openGraphEdge) {
 		ID:    strings.ToUpper(obj.ResourceId),
 		Properties: map[string]interface{}{
 			"name":            strings.ToUpper(obj.Name),
-			"objectid":        strings.ToUpper(obj.ResourceId),
 			"tenantid":        strings.ToUpper(obj.TenantId),
 			"operatingsystem": strings.ToUpper(obj.OperatingSystem),
 		},

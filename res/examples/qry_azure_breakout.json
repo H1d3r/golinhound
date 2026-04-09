@@ -1,255 +1,279 @@
 {
-    "metadata": {},
-    "graph": {
-        "nodes": [
-            {
-                "kinds": [
-                    "SSHComputer"
-                ],
-                "id": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
-                "properties": {
-                    "FQDN": "srv5",
-                    "name": "srv5"
-                }
-            },
-            {
-                "kinds": [
-                    "SSHUser"
-                ],
-                "id": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
-                "properties": {
-                    "name": "appadmin@srv5"
-                }
-            },
-            {
-                "kinds": [
-                    "SSHKeyPair"
-                ],
-                "id": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
-                "properties": {
-                    "Algorithm": "ssh-rsa",
-                    "Base64": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDhhSwJ5tNuhFkqYmd8MJco5za7K6udO/73AF0I1gHjtik8Tdg09z75scgQ0PZLkaAEibuS8mPLbBioz+TeEdOsFtRaET08imheZWOJI9g0o0QL4qyHTu3pkOF2cf+e3qUNmcoV7BDMw3f5sa4nH93yEaBNCT38onxuh3qDhC+iuWGGjogQZlfLPiL5JXnCo8MVM4XSF61woOl3hdHg2YLRxy4Qt6T/nE40wz3nSAIdl+YxNZdmO0HgSE/NOjz2zTh8+d3zYxZuJmSNnRGE94hv1Xwy9mQTfbRg1Vx7QJIDGLlRFxQRuOg02O2dwH9FbJ1FCEUn5Yil4KofN4qDqhnX5qxuY+PvKcSMcaudMszowhAYnkukQ637AJEwiz1L0rb3Tp5XMImToUtnV9IcNPkPc0Gp8JsCDOOteIs5kte51MFrtYfKIENZyoB+zoh21hHAkf4WBeSdbzXtyeCgqpmWYwrJHcjSkaHRY195Uun6/3VH4mf6cDg0rKnjqxUsyE8=",
-                    "FIDO2": false,
-                    "FingerprintMD5": "36:09:69:9f:2e:46:e4:f9:2e:b1:fc:52:0e:73:b2:fb",
-                    "FingerprintSHA256": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
-                    "name": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
-                }
-            },
-            {
-                "kinds": [
-                    "AZVM",
-                    "AZBase"
-                ],
-                "id": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5",
-                "properties": {
-                    "name": "srv5",
-                    "operatingsystem": "LINUX",
-                    "tenantid": "0F2A5F68-F78A-4816-9F5B-37AFDDF87EE8"
-                }
-            },
-            {
-                "kinds": [
-                    "SSHComputer"
-                ],
-                "id": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
-                "properties": {
-                    "FQDN": "srv6",
-                    "name": "srv6"
-                }
-            },
-            {
-                "kinds": [
-                    "SSHUser"
-                ],
-                "id": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
-                "properties": {
-                    "name": "appadmin@srv6"
-                }
-            },
-            {
-                "kinds": [
-                    "AZVM",
-                    "AZBase"
-                ],
-                "id": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6",
-                "properties": {
-                    "name": "srv6",
-                    "operatingsystem": "LINUX",
-                    "tenantid": "34E24DB7-CBA5-4C00-A1CB-8DA47459DDA9"
-                }
-            }
+  "metadata": {},
+  "graph": {
+    "nodes": [
+      {
+        "kinds": [
+          "SSHComputer"
         ],
-        "edges": [
-            {
-                "kind": "CanImpersonate",
-                "start": {
-                    "match_by": "id",
-                    "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
-                },
-                "properties": {}
-            },
-            {
-                "kind": "CanSudo",
-                "start": {
-                    "match_by": "id",
-                    "value": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
-                },
-                "properties": {
-                    "Commands": "(ALL) NOPASSWD: ALL",
-                    "PasswordRequired": false
-                }
-            },
-            {
-                "kind": "HasPrivateKey",
-                "start": {
-                    "match_by": "id",
-                    "value": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
-                },
-                "properties": {
-                    "Cipher": "none",
-                    "Comment": "",
-                    "Encrypted": false,
-                    "FilePath": "/home/appadmin/.ssh/id_rsa",
-                    "KDF": "none",
-                    "KeyFormat": "openssh-key-v1"
-                }
-            },
-            {
-                "kind": "SameMachine",
-                "start": {
-                    "match_by": "id",
-                    "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5"
-                },
-                "properties": {}
-            },
-            {
-                "kind": "SameMachine",
-                "start": {
-                    "match_by": "id",
-                    "value": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY"
-                },
-                "properties": {}
-            },
-            {
-                "kind": "CanImpersonate",
-                "start": {
-                    "match_by": "id",
-                    "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "properties": {}
-            },
-            {
-                "kind": "CanSudo",
-                "start": {
-                    "match_by": "id",
-                    "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "properties": {
-                    "Commands": "(ALL) NOPASSWD: ALL",
-                    "PasswordRequired": false
-                }
-            },
-            {
-                "kind": "HasPrivateKey",
-                "start": {
-                    "match_by": "id",
-                    "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
-                },
-                "properties": {
-                    "Cipher": "none",
-                    "Comment": "",
-                    "Encrypted": false,
-                    "FilePath": "/home/appadmin/.ssh/id_rsa",
-                    "KDF": "none",
-                    "KeyFormat": "openssh-key-v1"
-                }
-            },
-            {
-                "kind": "CanSSH",
-                "start": {
-                    "match_by": "id",
-                    "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "properties": {
-                    "Comment": "appadmin",
-                    "FilePath": "/home/appadmin/.ssh/authorized_keys"
-                }
-            },
-            {
-                "kind": "CanSSH",
-                "start": {
-                    "match_by": "id",
-                    "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "properties": {
-                    "Comment": "appadmin",
-                    "FilePath": "/home/appadmin/.ssh/authorized_keys"
-                }
-            },
-            {
-                "kind": "SameMachine",
-                "start": {
-                    "match_by": "id",
-                    "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6"
-                },
-                "properties": {}
-            },
-            {
-                "kind": "SameMachine",
-                "start": {
-                    "match_by": "id",
-                    "value": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6"
-                },
-                "end": {
-                    "match_by": "id",
-                    "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo"
-                },
-                "properties": {}
-            }
-        ]
-    }
+        "id": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+        "properties": {
+          "FQDN": "srv5",
+          "name": "srv5"
+        }
+      },
+      {
+        "kinds": [
+          "SSHUser"
+        ],
+        "id": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+        "properties": {
+          "name": "appadmin@srv5"
+        }
+      },
+      {
+        "kinds": [
+          "SSHKeyPair"
+        ],
+        "id": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
+        "properties": {
+          "Algorithm": "ssh-rsa",
+          "Base64": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDhhSwJ5tNuhFkqYmd8MJco5za7K6udO/73AF0I1gHjtik8Tdg09z75scgQ0PZLkaAEibuS8mPLbBioz+TeEdOsFtRaET08imheZWOJI9g0o0QL4qyHTu3pkOF2cf+e3qUNmcoV7BDMw3f5sa4nH93yEaBNCT38onxuh3qDhC+iuWGGjogQZlfLPiL5JXnCo8MVM4XSF61woOl3hdHg2YLRxy4Qt6T/nE40wz3nSAIdl+YxNZdmO0HgSE/NOjz2zTh8+d3zYxZuJmSNnRGE94hv1Xwy9mQTfbRg1Vx7QJIDGLlRFxQRuOg02O2dwH9FbJ1FCEUn5Yil4KofN4qDqhnX5qxuY+PvKcSMcaudMszowhAYnkukQ637AJEwiz1L0rb3Tp5XMImToUtnV9IcNPkPc0Gp8JsCDOOteIs5kte51MFrtYfKIENZyoB+zoh21hHAkf4WBeSdbzXtyeCgqpmWYwrJHcjSkaHRY195Uun6/3VH4mf6cDg0rKnjqxUsyE8=",
+          "FIDO2": false,
+          "FingerprintMD5": "36:09:69:9f:2e:46:e4:f9:2e:b1:fc:52:0e:73:b2:fb",
+          "FingerprintSHA256": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
+          "name": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA"
+        }
+      },
+      {
+        "kinds": [
+          "AZVM",
+          "AZBase"
+        ],
+        "id": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5",
+        "properties": {
+          "name": "srv5",
+          "operatingsystem": "LINUX",
+          "tenantid": "0F2A5F68-F78A-4816-9F5B-37AFDDF87EE8"
+        }
+      },
+      {
+        "kinds": [
+          "SSHComputer"
+        ],
+        "id": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+        "properties": {
+          "FQDN": "srv6",
+          "name": "srv6"
+        }
+      },
+      {
+        "kinds": [
+          "SSHUser"
+        ],
+        "id": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+        "properties": {
+          "name": "appadmin@srv6"
+        }
+      },
+      {
+        "kinds": [
+          "AZVM",
+          "AZBase"
+        ],
+        "id": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6",
+        "properties": {
+          "name": "srv6",
+          "operatingsystem": "LINUX",
+          "tenantid": "34E24DB7-CBA5-4C00-A1CB-8DA47459DDA9"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "kind": "CanImpersonate",
+        "start": {
+          "match_by": "id",
+          "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+          "kind": "SSHComputer"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+          "kind": "SSHUser"
+        },
+        "properties": {}
+      },
+      {
+        "kind": "CanSudo",
+        "start": {
+          "match_by": "id",
+          "value": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+          "kind": "SSHUser"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+          "kind": "SSHComputer"
+        },
+        "properties": {
+          "Commands": "(ALL) NOPASSWD: ALL",
+          "PasswordRequired": false
+        }
+      },
+      {
+        "kind": "HasPrivateKey",
+        "start": {
+          "match_by": "id",
+          "value": "appadmin@/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+          "kind": "SSHUser"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
+          "kind": "SSHKeyPair"
+        },
+        "properties": {
+          "Cipher": "none",
+          "Comment": "",
+          "Encrypted": false,
+          "FilePath": "/home/appadmin/.ssh/id_rsa",
+          "KDF": "none",
+          "KeyFormat": "openssh-key-v1"
+        }
+      },
+      {
+        "kind": "SameMachine",
+        "start": {
+          "match_by": "id",
+          "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+          "kind": "SSHComputer"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5",
+          "kind": "AZVM"
+        },
+        "properties": {}
+      },
+      {
+        "kind": "SameMachine",
+        "start": {
+          "match_by": "id",
+          "value": "/SUBSCRIPTIONS/E3CC8B7B-4A14-457D-AC44-CAFC2A77183D/RESOURCEGROUPS/APP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv5",
+          "kind": "AZVM"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "/9RkU9G8eQ53t+ayD2TgMyTidTczZAxHFLGSyvdeaqY",
+          "kind": "SSHComputer"
+        },
+        "properties": {}
+      },
+      {
+        "kind": "CanImpersonate",
+        "start": {
+          "match_by": "id",
+          "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHComputer"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHUser"
+        },
+        "properties": {}
+      },
+      {
+        "kind": "CanSudo",
+        "start": {
+          "match_by": "id",
+          "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHUser"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHComputer"
+        },
+        "properties": {
+          "Commands": "(ALL) NOPASSWD: ALL",
+          "PasswordRequired": false
+        }
+      },
+      {
+        "kind": "HasPrivateKey",
+        "start": {
+          "match_by": "id",
+          "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHUser"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
+          "kind": "SSHKeyPair"
+        },
+        "properties": {
+          "Cipher": "none",
+          "Comment": "",
+          "Encrypted": false,
+          "FilePath": "/home/appadmin/.ssh/id_rsa",
+          "KDF": "none",
+          "KeyFormat": "openssh-key-v1"
+        }
+      },
+      {
+        "kind": "CanSSH",
+        "start": {
+          "match_by": "id",
+          "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
+          "kind": "SSHKeyPair"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHUser"
+        },
+        "properties": {
+          "Comment": "appadmin",
+          "FilePath": "/home/appadmin/.ssh/authorized_keys"
+        }
+      },
+      {
+        "kind": "CanSSH",
+        "start": {
+          "match_by": "id",
+          "value": "kbmKzK62mtXX4xrdubYxNzKZhj0FsQq3OS88gys1CWA",
+          "kind": "SSHKeyPair"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "appadmin@/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHUser"
+        },
+        "properties": {
+          "Comment": "appadmin",
+          "FilePath": "/home/appadmin/.ssh/authorized_keys"
+        }
+      },
+      {
+        "kind": "SameMachine",
+        "start": {
+          "match_by": "id",
+          "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHComputer"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6",
+          "kind": "AZVM"
+        },
+        "properties": {}
+      },
+      {
+        "kind": "SameMachine",
+        "start": {
+          "match_by": "id",
+          "value": "/SUBSCRIPTIONS/22D22B53-1083-461B-8352-8F11A23E602B/RESOURCEGROUPS/APP2/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/srv6",
+          "kind": "AZVM"
+        },
+        "end": {
+          "match_by": "id",
+          "value": "/jqPLO6sVjWE2T7e+D2ImpFZ+nBrKYRS+RlpR131NQo",
+          "kind": "SSHComputer"
+        },
+        "properties": {}
+      }
+    ]
+  }
 }

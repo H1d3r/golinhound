@@ -40,16 +40,18 @@ type openGraphEdge struct {
 	Properties map[string]interface{} `json:"properties"`
 }
 
-func newOpenGraphEdge(kind string, startId string, endId string, properties map[string]interface{}) *openGraphEdge {
+func newOpenGraphEdge(kind string, startId string, startKind string, endId string, endKind string, properties map[string]interface{}) *openGraphEdge {
 	return &openGraphEdge{
 		Kind: kind,
 		Start: openGraphNodeSelector{
 			MatchBy: "id",
 			Value:   startId,
+			Kind:    startKind,
 		},
 		End: openGraphNodeSelector{
 			MatchBy: "id",
 			Value:   endId,
+			Kind:    endKind,
 		},
 		Properties: properties,
 	}
@@ -90,14 +92,14 @@ func openGraphBaseGraph(obj LinhoundObject) ([]*openGraphNode, []*openGraphEdge)
 	})
 	edges = append(edges, newOpenGraphEdge(
 		"IsRoot",
-		rootId,
-		computerId,
+		rootId, "SSHUser",
+		computerId, "SSHComputer",
 		map[string]interface{}{},
 	))
 	edges = append(edges, newOpenGraphEdge(
 		"CanImpersonate",
-		computerId,
-		rootId,
+		computerId, "SSHComputer",
+		rootId, "SSHUser",
 		map[string]interface{}{},
 	))
 
@@ -111,8 +113,8 @@ func openGraphBaseGraph(obj LinhoundObject) ([]*openGraphNode, []*openGraphEdge)
 	})
 	edges = append(edges, newOpenGraphEdge(
 		"CanImpersonate",
-		computerId,
-		userId,
+		computerId, "SSHComputer",
+		userId, "SSHUser",
 		map[string]interface{}{},
 	))
 
@@ -177,8 +179,8 @@ func LinhoundToOpenGraphObjects(obj LinhoundObject) ([]*openGraphNode, []*openGr
 		delete(props, "PublicKey")
 		edges = append(edges, newOpenGraphEdge(
 			"CanSSH",
-			obj.(AuthorizedKey).PublicKey.FingerprintSHA256,
-			fmt.Sprintf("%s@%s", obj.(AuthorizedKey).UserName, obj.(AuthorizedKey).Computer.UniqueId),
+			obj.(AuthorizedKey).PublicKey.FingerprintSHA256, "SSHKeyPair",
+			fmt.Sprintf("%s@%s", obj.(AuthorizedKey).UserName, obj.(AuthorizedKey).Computer.UniqueId), "SSHUser",
 			props,
 		))
 	}
@@ -192,8 +194,8 @@ func LinhoundToOpenGraphObjects(obj LinhoundObject) ([]*openGraphNode, []*openGr
 		delete(props, "PublicKey")
 		edges = append(edges, newOpenGraphEdge(
 			"HasPrivateKey",
-			fmt.Sprintf("%s@%s", obj.(PrivateKey).UserName, obj.(PrivateKey).Computer.UniqueId),
-			obj.(PrivateKey).PublicKey.FingerprintSHA256,
+			fmt.Sprintf("%s@%s", obj.(PrivateKey).UserName, obj.(PrivateKey).Computer.UniqueId), "SSHUser",
+			obj.(PrivateKey).PublicKey.FingerprintSHA256, "SSHKeyPair",
 			props,
 		))
 	}
@@ -207,8 +209,8 @@ func LinhoundToOpenGraphObjects(obj LinhoundObject) ([]*openGraphNode, []*openGr
 		delete(props, "PublicKey")
 		edges = append(edges, newOpenGraphEdge(
 			"ForwardsKey",
-			fmt.Sprintf("%s@%s", obj.(ForwardedKey).UserName, obj.(ForwardedKey).Computer.UniqueId),
-			obj.(ForwardedKey).PublicKey.FingerprintSHA256,
+			fmt.Sprintf("%s@%s", obj.(ForwardedKey).UserName, obj.(ForwardedKey).Computer.UniqueId), "SSHUser",
+			obj.(ForwardedKey).PublicKey.FingerprintSHA256, "SSHKeyPair",
 			props,
 		))
 	}
@@ -220,8 +222,8 @@ func LinhoundToOpenGraphObjects(obj LinhoundObject) ([]*openGraphNode, []*openGr
 		delete(props, "UserName")
 		edges = append(edges, newOpenGraphEdge(
 			"CanSudo",
-			fmt.Sprintf("%s@%s", obj.(Sudoer).UserName, obj.(Sudoer).Computer.UniqueId),
-			obj.(Sudoer).Computer.UniqueId,
+			fmt.Sprintf("%s@%s", obj.(Sudoer).UserName, obj.(Sudoer).Computer.UniqueId), "SSHUser",
+			obj.(Sudoer).Computer.UniqueId, "SSHComputer",
 			props,
 		))
 	}
@@ -248,6 +250,7 @@ func KeyTabToOpenGraph(obj Keytab) []*openGraphEdge {
 		Start: openGraphNodeSelector{
 			MatchBy: "id",
 			Value:   obj.Computer.UniqueId,
+			Kind:    "SSHComputer",
 		},
 		End: openGraphNodeSelector{
 			MatchBy: "name",
@@ -261,6 +264,8 @@ func KeyTabToOpenGraph(obj Keytab) []*openGraphEdge {
 	// because SSHComputer might have the same name as AD Computer
 	if !strings.Contains(name, "@") {
 		edge.End.Kind = "Computer"
+	} else {
+		edge.End.Kind = "User"
 	}
 
 	return []*openGraphEdge{&edge}
@@ -287,6 +292,7 @@ func TGTToOpenGraph(obj TGT) []*openGraphEdge {
 		Start: openGraphNodeSelector{
 			MatchBy: "id",
 			Value:   obj.Computer.UniqueId,
+			Kind:    "SSHComputer",
 		},
 		End: openGraphNodeSelector{
 			MatchBy: "name",
@@ -300,6 +306,8 @@ func TGTToOpenGraph(obj TGT) []*openGraphEdge {
 	// because SSHComputer might have the same name as AD Computer
 	if !strings.Contains(name, "@") {
 		edge.End.Kind = "Computer"
+	} else {
+		edge.End.Kind = "User"
 	}
 
 	return []*openGraphEdge{&edge}
@@ -323,16 +331,16 @@ func AZVMToOpenGraph(obj AZVM) ([]*openGraphNode, []*openGraphEdge) {
 	//(SSHComputer)-[sameMachine]->(AZVM)
 	edges = append(edges, newOpenGraphEdge(
 		"SameMachine",
-		obj.Computer.UniqueId,
-		strings.ToUpper(obj.ResourceId),
+		obj.Computer.UniqueId, "SSHComputer",
+		strings.ToUpper(obj.ResourceId), "AZVM",
 		map[string]interface{}{},
 	))
 
 	//(SSHComputer)<-[sameMachine]-(AZVM)
 	edges = append(edges, newOpenGraphEdge(
 		"SameMachine",
-		strings.ToUpper(obj.ResourceId),
-		obj.Computer.UniqueId,
+		strings.ToUpper(obj.ResourceId), "AZVM",
+		obj.Computer.UniqueId, "SSHComputer",
 		map[string]interface{}{},
 	))
 	// create

@@ -36,23 +36,15 @@ Outputs [OpenGraph](https://bloodhound.specterops.io/opengraph/schema) JSON and 
 git clone https://github.com/rantasec/golinhound
 cd golinhound
 
-# add custom node icons to BloodHound
-BASEURL="http://localhost:8080"
-TOKEN="<YOUR_TOKEN>"
-curl -X "POST" \
-  "${BASEURL}/api/v2/custom-nodes" \
-  -H "accept: application/json" \
-  -H "Prefer: wait=30" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${TOKEN}" \
-  -d @res/custom-nodes.json
-
 # build golinhound yourself
 make build
 
 # alternatively, download latest release
 wget -P "bin/" "https://github.com/RantaSec/golinhound/releases/latest/download/golinhound-linux-amd64"
 wget -P "bin/" "https://github.com/RantaSec/golinhound/releases/latest/download/golinhound-linux-arm64"
+
+# add custom node icons to BloodHound (prompts for password; add -insecure for self-signed certs)
+./bin/golinhound-linux-amd64 configure -url http://localhost:8080 -user admin
 
 # execute golinhound
 sudo ./bin/golinhound-linux-amd64 collect > output.json
